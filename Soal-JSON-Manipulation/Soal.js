@@ -3,7 +3,7 @@
 // 1. Find items in the Meeting Room.
 // 2. Find all electronic devices.
 // 3. Find all the furniture.
-// 4. Find all items were purchased on 16 Januari 2020.
+// 4. Find all items were purchased on 16 January 2020.
 // 5. Find all items with brown color.
 
 // ``
@@ -80,27 +80,27 @@ function FindFurniture()
 
 console.log(FindFurniture(data));
 
-function WhenPurchased()
+function PurchasedOn()
 {
   let items = "";
   let result = [];
 
   for (let i = 0; i < data.length; i++)
   {
-    if (data[i].purchased_at == "16 Januari 2020")
+    if (data[i].purchased_at == "1579107600000" || data[i].purchased_at == "1579132800000")
     {
       items = data[i].name;
       result.push(items);
-      return `Items purchased on 16 Januari 2020: ${result}`;
+      return `Items purchased on 16 January 2020: ${result}`;
     }
-    else if (data[i].purchased_at != "16 Januari 2020")
+    else
     {
-      return "Items not found";
+      return "There were no items purchased on 16 January 2020";
     }
   }
 }
 
-console.log(WhenPurchased(data));
+console.log(PurchasedOn(data));
 
 function FindBrown()
 {
